@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for employee in employee_list %}
+<ul>
+    <li>{{employee.real_name}}<br></li>
+    <li>{{employee.employee_id}}<br></li>
+    <li>{{employee.tz}}<br></li>
+        <li>
+            <ol>
+                {% for activity in employee.activityperiods_set.all %}
+                <li>start time:{{activity.start_time}}</li>
+                <li>end time:{{activity.end_time}}</li>
+        {% endfor %}</li>
+</ul>
+<br><br>
+
+{% endfor %}
+</body>
+</html>
